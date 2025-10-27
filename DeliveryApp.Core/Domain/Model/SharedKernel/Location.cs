@@ -50,7 +50,7 @@ public class Location : ValueObject
     }
     
     /// <summary>
-    /// СОздать рандомный экземпляр Location
+    /// Создать рандомный экземпляр Location
     /// </summary>
     /// <returns></returns>
     public static Location CreateRandom()
@@ -63,7 +63,7 @@ public class Location : ValueObject
     }
 
     /// <summary>
-    /// Расчитывает расстояние до целевой точки
+    /// Рассчитывает расстояние до целевой точки
     /// </summary>
     /// <param name="target"></param>
     /// <returns></returns>
