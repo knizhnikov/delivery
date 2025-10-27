@@ -5,6 +5,9 @@ namespace DeliveryApp.Core.Domain.Model.SharedKernel;
 
 public class Location : ValueObject
 {
+    public const int MinCoordinate = 1;
+    public const int MaxCoordinate = 10;
+    
     /// <summary>
     /// Горизонталь
     /// </summary>
@@ -43,8 +46,8 @@ public class Location : ValueObject
     /// <returns></returns>
     public static Result<Location, Error> Create(int x, int y)
     {
-        if (x is < 1 or > 10) return GeneralErrors.ValueIsInvalid(nameof(x));
-        if (y is < 1 or > 10) return GeneralErrors.ValueIsInvalid(nameof(y));
+        if (x is < MinCoordinate or > MaxCoordinate) return GeneralErrors.ValueIsInvalid(nameof(x));
+        if (y is < MinCoordinate or > MaxCoordinate) return GeneralErrors.ValueIsInvalid(nameof(y));
 
         return new Location(x, y);
     }
